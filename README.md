@@ -1,4 +1,4 @@
-# PenIsBackAgain
+# Win2D를 이용한 그림판 만들기
 
 ## 실행화면
 ![캡처](https://github.com/CommercialCrew/PenIsBackAgain/assets/101386134/1c3c2e51-ff71-40d4-828e-32d2a8224343)
