@@ -167,7 +167,7 @@ void winrt::PenIsBackAgain::implementation::MainWindow::ColorPicker_Click(winrt:
 }
 ```
 
-
+```
 void winrt::PenIsBackAgain::implementation::MainWindow::ColorPicker_ColorChanged(winrt::Microsoft::UI::Xaml::Controls::ColorPicker const& sender, winrt::Microsoft::UI::Xaml::Controls::ColorChangedEventArgs const& args)
 {
     ColorP = args.NewColor();
@@ -224,7 +224,7 @@ void winrt::PenIsBackAgain::implementation::MainWindow::CanvasControl_Draw(winrt
         args.DrawingSession().FillCircle(vx[i], vy[i], sizeP[i] / 2, col[i]);
     }
 }
-
+```
 
 이후는 모두 처리기 내용 작성 부분이다. 모든 함수들은 모두 처리기 작성 버튼을 눌러 생성시 자동으로 작성되어 있으며, 우리는 그 안의 코드만 입력하면 된다.
 마우스의 위치 좌표를 px, py에 저장해두고 그 위치에 따라 선을 작성하는 식으로 작동되는데, 그냥 float변수인 px,py를 이용하지 못하므로 vector 변수인 vx,vy에 push_back()을 이용해 값을 물려주어 이용한다.
