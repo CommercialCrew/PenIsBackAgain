@@ -165,9 +165,7 @@ void winrt::PenIsBackAgain::implementation::MainWindow::ColorPicker_Click(winrt:
         colorPanel().Visibility(Visibility::Visible);
     }
 }
-```
 
-```
 void winrt::PenIsBackAgain::implementation::MainWindow::ColorPicker_ColorChanged(winrt::Microsoft::UI::Xaml::Controls::ColorPicker const& sender, winrt::Microsoft::UI::Xaml::Controls::ColorChangedEventArgs const& args)
 {
     ColorP = args.NewColor();
