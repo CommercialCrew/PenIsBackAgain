@@ -69,7 +69,8 @@ Grid를 이용해서 영역을 나누는데, 그 크기를 RowDefinition과 Colu
 
 using namespace winrt::Microsoft::UI;
 using namespace winrt::Microsoft::Graphics::Canvas::UI::Xaml;
-using namespace std;```
+using namespace std;
+```
 
 Win2D 프로그래밍에 필요한 요소들을 불러온다.
 
@@ -102,7 +103,8 @@ Win2D 프로그래밍에 필요한 요소들을 불러온다.
         void CanvasControl_PointerMoved(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::Input::PointerRoutedEventArgs const& e);
         void CanvasControl_Draw(winrt::Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl const& sender, winrt::Microsoft::Graphics::Canvas::UI::Xaml::CanvasDrawEventArgs const& args);
     };
-}```
+}
+```
 
 이후에는 이 부분을 작성한다. 뒷부분의 void 함수들은 Xaml파일에서 처리기 추가 버튼을 눌러 추가했으면 자동생성되는 부분이고, 우리는 중간의
 int32_t MyProperty(); 부분 바로 아래의 bool과 float, vector 변수들만 작성하면 된다.
@@ -110,9 +112,11 @@ int32_t MyProperty(); 부분 바로 아래의 bool과 float, vector 변수들만
 5. 마지막으로 cpp 파일을 작성한다.
 
 ```struct winrt::Windows::UI::Color ColorP = winrt::Microsoft::UI::Colors::Green();```
+
 으로 색상을 미리 변수에 저장해두고,
 
-```namespace winrt::PenIsBackAgain::implementation
+```
+namespace winrt::PenIsBackAgain::implementation
 {
 
     
@@ -132,13 +136,15 @@ int32_t MyProperty(); 부분 바로 아래의 bool과 float, vector 변수들만
         throw hresult_not_implemented();
     }
     
-}```
+}
+```
 헤더파일에서 작성한 변수는 이렇게 초기화 해준다. 변수 초기화 부분 말고는 전부 이미 작성되어 있는 부분이다.
 (책에서 이 부분에 실수가 있었던 것으로 보인다. 버전이슈인지는 모르겠지만 현재는 이렇게 넣어야 정상적으로 헤더에서 선언한 변수를 인식하고 초기화가 가능하다.)
 
 
 
-```void winrt::PenIsBackAgain::implementation::MainWindow::Slider_ValueChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::Controls::Primitives::RangeBaseValueChangedEventArgs const& e)
+```
+void winrt::PenIsBackAgain::implementation::MainWindow::Slider_ValueChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::Controls::Primitives::RangeBaseValueChangedEventArgs const& e)
 {
     mySize = e.NewValue();
 }
@@ -159,6 +165,7 @@ void winrt::PenIsBackAgain::implementation::MainWindow::ColorPicker_Click(winrt:
         colorPanel().Visibility(Visibility::Visible);
     }
 }
+```
 
 
 void winrt::PenIsBackAgain::implementation::MainWindow::ColorPicker_ColorChanged(winrt::Microsoft::UI::Xaml::Controls::ColorPicker const& sender, winrt::Microsoft::UI::Xaml::Controls::ColorChangedEventArgs const& args)
@@ -217,7 +224,7 @@ void winrt::PenIsBackAgain::implementation::MainWindow::CanvasControl_Draw(winrt
         args.DrawingSession().FillCircle(vx[i], vy[i], sizeP[i] / 2, col[i]);
     }
 }
-```
+
 
 이후는 모두 처리기 내용 작성 부분이다. 모든 함수들은 모두 처리기 작성 버튼을 눌러 생성시 자동으로 작성되어 있으며, 우리는 그 안의 코드만 입력하면 된다.
 마우스의 위치 좌표를 px, py에 저장해두고 그 위치에 따라 선을 작성하는 식으로 작동되는데, 그냥 float변수인 px,py를 이용하지 못하므로 vector 변수인 vx,vy에 push_back()을 이용해 값을 물려주어 이용한다.
