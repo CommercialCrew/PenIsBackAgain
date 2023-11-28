@@ -17,7 +17,7 @@ xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"
 
 그 다음에는 다음 코드를 추가한다.
 
-```<Grid>
+<Grid>
     <Grid.RowDefinitions>
         <RowDefinition Height="60" />
         <RowDefinition Height="590" />
@@ -55,7 +55,7 @@ xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"
                 IsAlphaSliderVisible="True"
                 IsAlphaTextInputVisible="True" />
         </Border>
-</Grid>```
+</Grid>
 
 Grid를 이용해서 영역을 나누는데, 그 크기를 RowDefinition과 ColumnDefinition으로 미리 정해두는 방식이다. 이후 Grid.Row=""과 Grid.Column=""을 이용해 Definition을 끌고올 수 있다.
 
